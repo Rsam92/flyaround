@@ -5,7 +5,8 @@ namespace WCS\CoavBundle\Controller;
 use WCS\CoavBundle\Entity\PlaneModel;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Planemodel controller.
@@ -26,7 +27,8 @@ class PlaneModelController extends Controller
 
         $planeModels = $em->getRepository('WCSCoavBundle:PlaneModel')->findAll();
 
-        return $this->render('planemodel/index.html.twig', array(
+        return $this->render(
+            'planemodel/index.html.twig', array(
             'planeModels' => $planeModels,
         ));
     }
@@ -130,7 +132,6 @@ class PlaneModelController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('planemodel_delete', array('id' => $planeModel->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
