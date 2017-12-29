@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Planemodel controller.
  *
- * @Route("planemodel")
+ * @Route("/planemodel")
  */
 class PlaneModelController extends Controller
 {
